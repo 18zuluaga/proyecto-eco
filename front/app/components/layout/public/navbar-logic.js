@@ -68,8 +68,6 @@ export function logicNav() {
         </div>  
       `;
 
-    console.log(sumar, restar, cantidad);
-
     const numpre = parseInt(elemento.precio);
     precio += numpre;
     total.textContent = precio;

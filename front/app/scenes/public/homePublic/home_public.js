@@ -22,7 +22,7 @@ import arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/i
 import { navigateTo } from '../../../Router';
 
 export function HomePagePublic(params) {
-  const pageContent = `
+  const pageContent = /* html */`
     <div ${styles.cuerpo}> 
     <!-- fondo de montañas -->
     <section class="${styles.parallax}">
@@ -66,6 +66,7 @@ export function HomePagePublic(params) {
             <button id="casa"><img src="${casa}" alt=""></button>
             <button id="comid"><img src="${comida}" alt=""></button>
             <button id="papel"><img src="${papel}" alt=""></button>
+            <div class="f"></div>
           </div>
           <p class="${styles.text_product_top}">Top select</p>
           <div class="${styles.top_product}">
@@ -74,8 +75,16 @@ export function HomePagePublic(params) {
             </div>
             <div class="${styles.cards}">
               <div class="${styles.slider} slider" id="lista_1">
-
-                <div class="prod">
+              <div class="${styles.card}">
+                <div class="${styles.card_prodct}">
+                  <img src="/" alt="">
+                  <h3 class="${styles.title_product}">hg</h3>
+                  <div class="${styles.producct_info}">
+                    <p class="${styles.precio} precio">5</p>
+                    <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                  </div>
+                </div>
+              </div>
 
               </div>
             </div>
@@ -238,20 +247,23 @@ export function HomePagePublic(params) {
   };
 
   async function AllProduct() {
-    try {
-      const response = await fetch(
-        'http://localhost:4000/api/auth/get-products'
-      );
-      if (!response.ok) {
-        throw new Error('Error al obtener los productos');
-      }
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error('Error al obtener los productos:', error);
-      return null;
+    return {
+      
     }
-  }
+  //   try {
+  //     const response = await fetch(
+  //       'http://localhost:4000/api/auth/get-products'
+  //     );
+  //     if (!response.ok) {
+  //       throw new Error('Error al obtener los productos');
+  //     }
+  //     const data = await response.json();
+  //     return data;
+  //   } catch (error) {
+  //     console.error('Error al obtener los productos:', error);
+  //     return null;
+  //   }
+  // }
 
   async function AllProductbyIdcategory(id_category) {
     try {
